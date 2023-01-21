@@ -73,4 +73,4 @@ export class ExamplesStack extends cdk.Stack {
 ```
 </details>
 
-**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/SST_dev) | [Website]((https://buttonize.io)) 
+**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/SST_dev) | [Website](https://buttonize.io)
