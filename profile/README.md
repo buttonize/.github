@@ -10,8 +10,13 @@
 
 Hi there! 👋
 
-[Buttonize](https://buttonize.io) is a low-code paltform which enables cloud developers to create UI widgets like buttons, inputs, forms etc. connected to the cloud services like [AWS Lambda](https://aws.amazon.com/lambda/), [AWS Step Functions](https://aws.amazon.com/step-functions/), [AmazonDynamoDB](https://aws.amazon.com/dynamodb/) and more.
+[Buttonize](https://buttonize.io) is a low-code paltform which enables serverles developers to create UI widgets like buttons, inputs, forms etc. connected to the cloud services like [AWS Lambda](https://aws.amazon.com/lambda/), [AWS Step Functions](https://aws.amazon.com/step-functions/), [AmazonDynamoDB](https://aws.amazon.com/dynamodb/) and more.
 
+## Check out quick use-case demo video
+
+<p align="center">
+  <a href="https://youtu.be/giroZqjTJqE"><img width="720" alt="Buttonize use-case demo video" src="https://user-images.githubusercontent.com/6282843/227513455-843d2c82-4d8a-49b8-a324-acb611dcb226.png"></a>
+</p>
 
 ## Example
 
@@ -31,8 +36,8 @@ export class SimpleFormStack extends cdk.Stack {
     super(scope, id, props)
 
     btnz.GlobalConfig.init(this, {
-      apiKey: process.env.BUTTONIZE_API_KEY, // Ideally fetch this information from SSM
-      externalId: 'some-external-id-here123' // Ideally fetch this information from SSM
+      apiKey: cdk.SecretValue.unsafePlainText('YOUR-BUTTONIZE-API-KEY'), // Ideally use SSM or Secrets Manager
+      executionRoleExternalId: cdk.SecretValue.unsafePlainText('this-is-secret') // Ideally use SSM or Secrets Manager
     })
 
     const simpleFormActionLambda = new NodejsFunction(
