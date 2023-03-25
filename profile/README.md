@@ -1,11 +1,11 @@
 <p align="center">
-  <a href="https://buttonize.io">
+  <a href="https://buttonize.io" target="_blank">
     <img width="350" alt="Buttonize.io" src="https://user-images.githubusercontent.com/6282843/212024942-9fd50774-ea26-48ba-b2cf-ca2584498c9a.png">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://discord.gg/2quY4Vz5BM"><img alt="Discord" src="https://img.shields.io/discord/1038752242238496779?style=flat-square" /></a>
+  <a href="https://discord.gg/2quY4Vz5BM" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/1038752242238496779?style=flat-square" /></a>
 </p>
 
 Hi there! 👋
@@ -15,7 +15,7 @@ Hi there! 👋
 ## Check out quick use-case demo video
 
 <p align="center">
-  <a href="https://youtu.be/giroZqjTJqE"><img width="720" alt="Buttonize use-case demo video" src="https://user-images.githubusercontent.com/6282843/227513455-843d2c82-4d8a-49b8-a324-acb611dcb226.png"></a>
+  <a href="https://youtu.be/giroZqjTJqE" target="_blank"><img width="720" alt="Buttonize use-case demo video" src="https://user-images.githubusercontent.com/6282843/227513455-843d2c82-4d8a-49b8-a324-acb611dcb226.png"></a>
 </p>
 
 ## Example
