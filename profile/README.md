@@ -1,79 +1,25 @@
+
 <p align="center">
-  <a href="https://buttonize.io" target="_blank">
+  <a href="https://buttonize.io">
     <img width="350" alt="Buttonize.io" src="https://user-images.githubusercontent.com/6282843/212024942-9fd50774-ea26-48ba-b2cf-ca2584498c9a.png">
   </a>
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/2quY4Vz5BM" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/1038752242238496779?style=flat-square" /></a>
-</p>
-
-Hi there! 👋
-
-[Buttonize](https://buttonize.io) is a low-code paltform which enables serverles developers to create UI widgets like buttons, inputs, forms etc. connected to the cloud services like [AWS Lambda](https://aws.amazon.com/lambda/), [AWS Step Functions](https://aws.amazon.com/step-functions/), [AmazonDynamoDB](https://aws.amazon.com/dynamodb/) and more.
-
-## Check out quick use-case demo video
+---
 
 <p align="center">
-  <a href="https://youtu.be/giroZqjTJqE" target="_blank"><img width="720" alt="Buttonize use-case demo video" src="https://user-images.githubusercontent.com/6282843/227513455-843d2c82-4d8a-49b8-a324-acb611dcb226.png"></a>
+  <a href="https://discord.gg/2quY4Vz5BM"><img alt="Discord" src="https://img.shields.io/discord/1038752242238496779?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/buttonize"><img alt="npm" src="https://img.shields.io/npm/v/buttonize?style=flat-square" /></a>
+  <a href="https://github.com/buttonize/buttonize/actions/workflows/release.yml?query=branch%3Amaster"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/buttonize/buttonize/release.yml?branch=master&style=flat-square&logo=github" /></a>
 </p>
 
-## Example
 
-<details>
-<summary>Show AWS CDK example code</summary>
-  
-```typescript
-import * as path from 'path'
-import * as btnz from '@buttonize/cdk'
-import * as cdk from 'aws-cdk-lib'
-import * as lambda from 'aws-cdk-lib/aws-lambda'
-import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs'
-import { Construct } from 'constructs'
+Buttonize enables you to build internals tools with [AWS CDK](https://aws.amazon.com/cdk/).
 
-export class SimpleFormStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props)
+Hook-up UI components directly to AWS Lambda functions. Just install Buttonize and deploy your CDK. **That's it.**
 
-    btnz.GlobalConfig.init(this, {
-      apiKey: cdk.SecretValue.unsafePlainText('YOUR-BUTTONIZE-API-KEY'), // Ideally use SSM or Secrets Manager
-      executionRoleExternalId: cdk.SecretValue.unsafePlainText('this-is-secret') // Ideally use SSM or Secrets Manager
-    })
+**Links**  [Website](https://buttonize.io) | [Docs](https://docs.buttonize.io) | [`buttonize` package](https://github.com/buttonize/buttonize)
 
-    const simpleFormActionLambda = new NodejsFunction(
-      this,
-      'SimpleFormActionLambda',
-      {
-        handler: 'handler',
-        entry: path.join(__dirname, `/src/index.ts`),
-        runtime: lambda.Runtime.NODEJS_18_X
-      }
-    )
+---
 
-    const form = new btnz.Form({
-      name: '[Example: simple-form] Invoke the lambda fucntion',
-      label: 'Open form',
-      tags: ['simple', 'button', 'example']
-    })
-
-    form
-      .addTextField('email', {
-        label: 'Email of the user',
-        placeholder: 'user@example.com',
-        regex: '^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$'
-      })
-      .addToggleField('isAdmin', {
-        label: 'Is admin'
-      })
-
-    simpleFormActionLambda.addEventSource(form)
-  }
-}
-```
-</details>
-
-## Docs
-
-Learn more at [docs.buttnoize.io](https://docs.buttonize.io/infrastructure-as-code/aws-cdk/quick-start)
-
-**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/SST_dev) | [Website](https://buttonize.io)
+**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/SST_dev)
