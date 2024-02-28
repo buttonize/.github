@@ -13,4 +13,4 @@ Hook-up UI components directly to AWS Lambda functions. Just install Buttonize a
 
 ---
 
-**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/SST_dev)
+**Join our community** [Discord](https://discord.gg/2quY4Vz5BM) | [Twitter](https://twitter.com/Buttonizeio)
